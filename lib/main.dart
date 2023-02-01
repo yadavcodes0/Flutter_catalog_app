@@ -1,10 +1,11 @@
-import 'package:flutter/cupertino.dart';
+import 'package:catalog_f/pages/home_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
   runApp(const MyApp());
 }
 
+// ignore: must_be_immutable
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -12,11 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Material(
-        child: Center(
-          child: Text("Welcome to 30 days of flutter"),
-        ),
-      ),
+      home: HomePage(),
     );
   }
 }
