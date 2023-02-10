@@ -2,8 +2,7 @@ import 'package:catalog_f/utils/routes.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
-  // ignore: prefer_const_constructors_in_immutables
-  LoginPage({super.key});
+  const LoginPage({super.key});
 
   @override
   State<LoginPage> createState() => _LoginPageState();
@@ -39,12 +38,9 @@ class _LoginPageState extends State<LoginPage> {
           key: _formKey,
           child: Column(
             children: [
-              Padding(
-                padding: const EdgeInsets.only(top: 12.0),
-                child: Image.asset(
-                  "assets/images/hey.png",
-                  fit: BoxFit.cover,
-                ),
+              Image.asset(
+                "assets/images/hey.png",
+                fit: BoxFit.cover,
               ),
               const SizedBox(
                 height: 20.0,
