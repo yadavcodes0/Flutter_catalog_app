@@ -65,12 +65,13 @@ class _LoginPageState extends State<LoginPage> {
 
                   InkWell(
                     onTap: () async {
-                      await Future.delayed(const Duration(seconds: 1));
-                      // ignore: use_build_context_synchronously
-                      Navigator.pushNamed(context, MyRoutes.homeRoute);
                       setState(() {
                         changeButton = true;
                       });
+                      await Future.delayed(
+                        const Duration(seconds: 1),
+                      );
+                      Navigator.pushNamed(context, MyRoutes.homeRoute);
                     },
                     child: AnimatedContainer(
                       duration: const Duration(seconds: 1),
@@ -80,7 +81,7 @@ class _LoginPageState extends State<LoginPage> {
                             BorderRadius.circular(changeButton ? 50 : 8),
                       ),
                       height: 50,
-                      width: changeButton ? 50 : 140,
+                      width: changeButton ? 50 : 150,
                       alignment: Alignment.center,
                       child: changeButton
                           ? const Icon(
