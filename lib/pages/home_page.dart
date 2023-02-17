@@ -1,12 +1,13 @@
+import 'package:catalog_f/models/catalog.dart';
 import 'package:flutter/material.dart';
 import '../widgets/drawer.dart';
+import '../widgets/item_widget.dart';
 
 // ignore: must_be_immutable
 class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+  HomePage({super.key});
 
-  final int days = 30;
-  final String name = "Codepur";
+  final dummyList = List.generate(20, (index) => CatalogModel.items[0]);
 
   @override
   Widget build(BuildContext context) {
@@ -15,8 +16,16 @@ class HomePage extends StatelessWidget {
         centerTitle: true,
         title: const Text("Catalog App"),
       ),
-      body: Center(
-        child: Text("Welcome to $days of flutter by $name"),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: ListView.builder(
+          itemCount: dummyList.length,
+          itemBuilder: (context, index) {
+            return ItemWidget(
+              item: dummyList[index],
+            );
+          },
+        ),
       ),
       drawer: const MyDrawer(),
     );
