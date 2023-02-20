@@ -7,7 +7,7 @@
             "desc": "Apple iPhone 12th generation",
             "price": 999,
             "color": "#33505a",
-            "image": "https://img.giznext.com/assets/model/2/97/apple-iphone-12-pro-d12d7db15c5460c83cb7a40df5c395.jpg?width=360"
+            "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-12-pro-blue-hero?wid=940&hei=1112&fmt=png-alpha&qlt=80&.v=1604021661000"
         },
         {
             "id": 2,
@@ -23,7 +23,7 @@
             "desc": "Apple Macbook air with apple silicon",
             "price": 1099,
             "color": "#e0bfae",
-            "image": "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP825/macbookair.png"
+            "image":"https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP825/macbookair.png"
         },
         {
             "id": 4,
@@ -31,7 +31,7 @@
             "desc": "Sony Playstation 5th generation",
             "price": 500,
             "color": "#544ee4",
-            "image": "https://www.gamespot.com/a/uploads/original/1578/15787979/3682209-screen%20shot%202020-06-11%20at%202.09.49%20pm.png"
+            "image": "https://cdn.shopify.com/s/files/1/0245/9382/5867/products/sony-gaming-console-sony-play-station-5-sony-ps-5-gaming-console-28043063001163_600x.jpg?v=1634797442"
         },
         {
             "id": 5,
@@ -39,7 +39,7 @@
             "desc": "Apple Airpods Pro 1st generation",
             "price": 200,
             "color": "#e3e4e9",
-            "image": "https://crdms.images.consumerreports.org/c_lfill,w_598/prod/products/cr/models/400116-wireless-portable-headphones-apple-airpods-pro-10009323.png"
+            "image":"https://crdms.images.consumerreports.org/c_lfill,w_598/prod/products/cr/models/400116-wireless-portable-headphones-apple-airpods-pro-10009323.png"
         },
         {
             "id": 6,
