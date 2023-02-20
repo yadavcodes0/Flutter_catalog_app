@@ -14,8 +14,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final dummyList = List.generate(20, (index) => CatalogModel.items[0]);
-
   @override
   void initState() {
     super.initState();
@@ -23,7 +21,15 @@ class _HomePageState extends State<HomePage> {
   }
 
   loadData() async {
-    var catalogjson = await rootBundle.loadString('assets/files/catalog.json');
+    await Future.delayed(const Duration(seconds: 2));
+    final catalogjson =
+        await rootBundle.loadString('assets/files/catalog.json');
+    final decodedData = jsonDecode(catalogjson);
+    var productsData = decodedData['products'];
+    CatalogModel.items = List.from(productsData)
+        .map<Item>((item) => Item.fromMap(item))
+        .toList();
+    setState(() {});
   }
 
   @override
@@ -35,14 +41,19 @@ class _HomePageState extends State<HomePage> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: ListView.builder(
-          itemCount: dummyList.length,
-          itemBuilder: (context, index) {
-            return ItemWidget(
-              item: dummyList[index],
-            );
-          },
-        ),
+        // ignore: unnecessary_null_comparison
+        child: (CatalogModel.items != null && CatalogModel.items.isNotEmpty)
+            ? ListView.builder(
+                itemCount: CatalogModel.items.length,
+                itemBuilder: (context, index) {
+                  return ItemWidget(
+                    item: CatalogModel.items[index],
+                  );
+                },
+              )
+            : const Center(
+                child: CircularProgressIndicator(),
+              ),
       ),
       drawer: const MyDrawer(),
     );
