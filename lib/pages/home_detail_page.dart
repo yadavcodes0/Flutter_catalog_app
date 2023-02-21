@@ -14,7 +14,9 @@ class HomeDetailPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: MyTheme.creamColor,
-      appBar: AppBar(),
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+      ),
       body: SafeArea(
         bottom: false,
         child: Column(
@@ -44,6 +46,11 @@ class HomeDetailPage extends StatelessWidget {
                           .xl
                           .make(),
                       10.heightBox,
+                      "Rebus dolores sed laborer aubergine nonary vera aubergine. Sit at laborer discing accusal lorem. Incident lorem clits lorem rebus lorem sed, ipsum dolores no laborer duo sit nimrod sed. Amen just.o sed laborer dolor ut sed, at justs et clits et sed diam, dolores kasai consenter ipsum tempore laborer, ipsum."
+                          .text
+                          .textStyle(context.captionStyle)
+                          .make()
+                          .p16(),
                     ],
                   ).py64(),
                 ),
@@ -69,8 +76,8 @@ class HomeDetailPage extends StatelessWidget {
                   const StadiumBorder(),
                 ),
               ),
-              child: "Buy".text.make(),
-            ).wh(100, 50),
+              child: "Add to Cart".text.make(),
+            ).wh(120, 50),
           ],
         ).p32(),
       ),
