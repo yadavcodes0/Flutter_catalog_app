@@ -4,6 +4,8 @@ import 'package:catalog_f/utils/routes.dart';
 import 'package:catalog_f/widgets/themes.dart';
 import 'package:flutter/material.dart';
 
+import 'pages/cart_page.dart';
+
 void main() {
   runApp(
     const MyApp(),
@@ -17,7 +19,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      themeMode: ThemeMode.light,
+      themeMode: ThemeMode.system,
       theme: MyTheme.lightTheme(context),
       darkTheme: MyTheme.darkTheme(context),
       debugShowCheckedModeBanner: false,
@@ -26,6 +28,7 @@ class MyApp extends StatelessWidget {
         "/": (context) => const LoginPage(),
         MyRoutes.homeRoute: (context) => const HomePage(),
         MyRoutes.loginRoute: (context) => const LoginPage(),
+        MyRoutes.cartRoute: (context) => const CartPage(),
       },
     );
   }

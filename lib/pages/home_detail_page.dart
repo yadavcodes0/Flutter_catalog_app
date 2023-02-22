@@ -13,8 +13,10 @@ class HomeDetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: MyTheme.creamColor,
-      appBar: AppBar(),
+      backgroundColor: context.canvasColor,
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+      ),
       body: SafeArea(
         bottom: false,
         child: Column(
@@ -31,12 +33,12 @@ class HomeDetailPage extends StatelessWidget {
                 arcType: VxArcType.CONVEY,
                 edge: VxEdge.TOP,
                 child: Container(
-                  color: Colors.white,
+                  color: context.cardColor,
                   width: context.screenWidth,
                   child: Column(
                     children: [
                       catalog.name.text.xl4
-                          .color(MyTheme.darkBluishColor)
+                          .color(context.accentColor)
                           .bold
                           .make(),
                       catalog.desc.text
@@ -44,6 +46,11 @@ class HomeDetailPage extends StatelessWidget {
                           .xl
                           .make(),
                       10.heightBox,
+                      "Rebus dolores sed laborer aubergine nonary vera aubergine. Sit at laborer discing accusal lorem. Incident lorem clits lorem rebus lorem sed, ipsum dolores no laborer duo sit nimrod sed. Amen just.o sed laborer dolor ut sed, at justs et clits et sed diam, dolores kasai consenter ipsum tempore laborer, ipsum."
+                          .text
+                          .textStyle(context.captionStyle)
+                          .make()
+                          .p16(),
                     ],
                   ).py64(),
                 ),
@@ -53,7 +60,7 @@ class HomeDetailPage extends StatelessWidget {
         ),
       ),
       bottomNavigationBar: Container(
-        color: Colors.white,
+        color: context.cardColor,
         child: ButtonBar(
           alignment: MainAxisAlignment.spaceBetween,
           buttonPadding: EdgeInsets.zero,
@@ -63,14 +70,14 @@ class HomeDetailPage extends StatelessWidget {
               onPressed: () {},
               style: ButtonStyle(
                 backgroundColor: MaterialStateProperty.all(
-                  MyTheme.darkBluishColor,
+                  context.theme.buttonColor,
                 ),
                 shape: MaterialStateProperty.all(
                   const StadiumBorder(),
                 ),
               ),
-              child: "Buy".text.make(),
-            ).wh(100, 50),
+              child: "Add to Cart".text.make(),
+            ).wh(120, 50),
           ],
         ).p32(),
       ),
