@@ -43,7 +43,7 @@ class _LoginPageState extends State<LoginPage> {
             children: [
               Image.asset(
                 "assets/images/hey.png",
-                fit: BoxFit.cover,
+                fit: BoxFit.contain,
               ),
               const SizedBox(
                 height: 20.0,
@@ -95,7 +95,7 @@ class _LoginPageState extends State<LoginPage> {
                       height: 40.0,
                     ),
                     Material(
-                      color: context.theme.buttonColor,
+                      color: Colors.deepPurple,
                       borderRadius:
                           BorderRadius.circular(changeButton ? 50 : 8),
                       child: InkWell(
