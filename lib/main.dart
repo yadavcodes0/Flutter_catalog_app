@@ -3,6 +3,7 @@ import 'package:catalog_f/pages/login_page.dart';
 import 'package:catalog_f/utils/routes.dart';
 import 'package:catalog_f/widgets/themes.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import 'pages/cart_page.dart';
 
@@ -18,18 +19,24 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      themeMode: ThemeMode.system,
-      theme: MyTheme.lightTheme(context),
-      darkTheme: MyTheme.darkTheme(context),
-      debugShowCheckedModeBanner: false,
-      initialRoute: MyRoutes.homeRoute,
-      routes: {
-        "/": (context) => const LoginPage(),
-        MyRoutes.homeRoute: (context) => const HomePage(),
-        MyRoutes.loginRoute: (context) => const LoginPage(),
-        MyRoutes.cartRoute: (context) => const CartPage(),
-      },
+    return AnnotatedRegion(
+      value: const SystemUiOverlayStyle(
+        statusBarColor: Colors.transparent,
+        statusBarIconBrightness: Brightness.dark,
+      ),
+      child: MaterialApp(
+        themeMode: ThemeMode.system,
+        theme: MyTheme.lightTheme(context),
+        darkTheme: MyTheme.darkTheme(context),
+        debugShowCheckedModeBanner: false,
+        initialRoute: MyRoutes.homeRoute,
+        routes: {
+          "/": (context) => const LoginPage(),
+          MyRoutes.homeRoute: (context) => const HomePage(),
+          MyRoutes.loginRoute: (context) => const LoginPage(),
+          MyRoutes.cartRoute: (context) => const CartPage(),
+        },
+      ),
     );
   }
 }
